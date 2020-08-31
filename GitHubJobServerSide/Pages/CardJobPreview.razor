@@ -1,0 +1,33 @@
+﻿@inherits CardJobPreviewComponentBase
+
+<div class="column is-one-fifth">
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-5by3">
+                @if (string.IsNullOrEmpty(Job.CompanyLogo))
+                {
+                    <img src="https://via.placeholder.com/256x256.png?text=No+Image">
+                }
+                else
+                {
+                    <img src=@Job.CompanyLogo>
+                }
+            </figure>
+        </div>
+
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p class="title is-4">@Job.Company</p>
+                </div>
+            </div>
+
+            <div class="content is-8">
+                <a @onclick="OnClick_NavigateToDetailedPage">
+                    <b>@Job.Title </b> @((MarkupString)Job.Type)
+                </a>
+                <p><time datetime="2016-1-1">Created: @Job.CreatedAt</time></p>
+            </div>
+        </div>
+    </div>
+</div>

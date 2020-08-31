@@ -1,0 +1,76 @@
+﻿@page "/"
+@inherits IndexComponentBase
+<section class="hero is-medium is-primary">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="content">
+                <div class="navbar-brand has-text-centered">
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero-body">
+        <div class="container">
+            <div class="title has-text-centered">
+
+                <h1>
+                    <b>Github Jobs Search Engine</b>
+                </h1>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="subtitle">
+
+                <div class="columns">
+                    <div class="column is-two-fifths">
+                        <div class="field has-addons">
+                            <p class="control has-icons-left is-expanded">
+                                <input class="input"
+                                       placeholder="Job title, keywords, or company"
+                                       @bind="@Description"
+                                       @bind:event="oninput"
+                                       @onkeypress="KeyPressAsync">
+                                <span class="icon is-left">
+                                    <i class="oi oi-magnifying-glass"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="column is-two-fifths">
+                        <p class="control has-icons-left is-expanded">
+                            <input class="input"
+                                   placeholder="Filter by city, state, zip code or country"
+                                   @bind="@Location"
+                                   @bind:event="oninput"
+                                   @onkeypress="KeyPressAsync">
+                            <span class="icon is-left">
+                                <i class="oi oi-globe"></i>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="column is-one-fifth">
+                        <p class="control">
+                            <a class="button is-info is-right" @onclick="OnClick_SearchButton">Search</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="content">
+    <progress class="progress is-large is-info @Visible" max="100">60%</progress>
+
+    <div class="columns is-multiline">
+        @foreach (var jobs in JobsModels)
+        {
+            <CardJobPreview Job="jobs" />
+        }
+    </div>
+</div>
