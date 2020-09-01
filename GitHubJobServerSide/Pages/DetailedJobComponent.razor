@@ -5,7 +5,7 @@
         Go back to search
     </a>
     <div class="columns">
-        <div class="column is-four-fifths">
+        <div class="column is-full">
             <div class="tile is-parent">
                 <div class="tile is-child box">
 
@@ -18,30 +18,11 @@
                     @((MarkupString)(Job.Description))
                 </div>
             </div>
-        </div>
-        <div class="columns is-multiline is-one-fifth">
-            <div class="column is-full">
+            <div class="column is-one-fifth">
                 <div class="tile is-vertical is-parent">
                     <div class="tile is-child box notification is-info">
                         <p class="title">How to Apply</p>
                         @((MarkupString)(Job.HowToApply))
-                    </div>
-                </div>
-            </div>
-            <div class="column is-full">
-                <div class="tile is-vertical is-parent">
-                    <div class="tile is-child box notification is-info">
-                        <p class="title">@((MarkupString)(Job.Company))</p>
-                        <figure class="image is-5by3">
-                            @if (string.IsNullOrEmpty(Job.CompanyLogo))
-                            {
-                                <img src="https://via.placeholder.com/256x256.png?text=No+Image">
-                            }
-                            else
-                            {
-                                <img src=@Job.CompanyLogo>
-                            }
-                        </figure>
                     </div>
                 </div>
             </div>
