@@ -338,3 +338,7 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+GitHubJobServerSide/wwwroot/css/bulma-0.9.0/
+!GitHubJobServerSide/wwwroot/css/bulma-0.9.0/bulma.css
+
+GitHubJobServerSide/wwwroot/css/bulma.css
